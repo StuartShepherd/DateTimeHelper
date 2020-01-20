@@ -27,6 +27,11 @@ namespace DateTimeHelper
             return new DateTime(date.Year, date.Month, 1);
         }
 
+        public static DateTime GetYearStart(DateTime date)
+        {
+            return new DateTime(date.Year, 1, 1);
+        }
+
         #endregion
 
     }

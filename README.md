@@ -18,5 +18,5 @@ Returns the current date without seconds.
 ### DateTimeHelper.GetHourStart Method
 Returns the current date without minutes and seconds.
 
-### DateTimeHelper.GetMonthStart Method
-Returns the first day of the month from specific date.
+### DateTimeHelper.GetYearStart Method
+Returns the first day of the year from specific date.
