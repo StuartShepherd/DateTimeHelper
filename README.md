@@ -29,3 +29,9 @@ Returns the first day of the year from specific date.
 
 ### DateTimeHelper.GetFirstDayOfWeek Method
 Returns the first day of the week.
+
+### DateTimeHelper.NumberOfWeeks Method
+Returns the number of weeks in specified time interval.
+
+### DateTimeHelper.IsValidFromTo Method
+Returns true if DateTime "from" is lower than or equal to DateTime "to" or one of them is equal to ZeroTime.

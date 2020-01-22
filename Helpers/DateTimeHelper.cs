@@ -6,7 +6,18 @@ namespace DateTimeHelper
     public static class DateTimeHelper
     {
 
+        #region "properties"
+
+        public readonly static DateTime ZERO_TIME;
+
+        #endregion
+
         #region "public methods"
+
+        static DateTimeHelper()
+        {
+            DateTimeHelper.ZERO_TIME = DateTime.MinValue;
+        }
 
         public static DateTime GetMinuteStart(DateTime date) => new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, 0);
 
@@ -43,6 +54,23 @@ namespace DateTimeHelper
         }
 
         public static DayOfWeek GetFirstDayOfWeek(CultureInfo cultureInfo) => cultureInfo.DateTimeFormat.FirstDayOfWeek;
+
+        public static int NumberOfWeeks(DateTime dateFrom, DateTime dateTo) => DateTimeHelper.NumberOfWeeks(dateFrom, dateTo, null);
+
+        public static int NumberOfWeeks(DateTime dateFrom, DateTime dateTo, CultureInfo cultureInfo)
+        {
+            dateFrom = cultureInfo == null ? DateTimeHelper.GetWeekStart(dateFrom) : DateTimeHelper.GetWeekStart(dateFrom, cultureInfo);
+            TimeSpan timeSpan = dateTo.Subtract(dateFrom);
+            return 1 + timeSpan.Days / 7;
+        }
+
+        public static bool IsValidFromTo(DateTime from, DateTime to)
+        {
+            if (from <= to)
+                return true;
+
+            return to == DateTimeHelper.ZERO_TIME;
+        }
 
         #endregion
 
