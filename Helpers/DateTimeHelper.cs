@@ -8,20 +8,11 @@ namespace DateTimeHelper
 
         #region "public methods"
 
-        public static DateTime GetMinuteStart(DateTime date)
-        {
-            return new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, 0);
-        }
+        public static DateTime GetMinuteStart(DateTime date) => new DateTime(date.Year, date.Month, date.Day, date.Hour, date.Minute, 0);
 
-        public static DateTime GetHourStart(DateTime date)
-        {
-            return new DateTime(date.Year, date.Month, date.Day, date.Hour, 0, 0);
-        }
+        public static DateTime GetHourStart(DateTime date) => new DateTime(date.Year, date.Month, date.Day, date.Hour, 0, 0);
 
-        public static DateTime GetDayStart(DateTime date)
-        {
-            return new DateTime(date.Year, date.Month, date.Day);
-        }
+        public static DateTime GetDayStart(DateTime date) => new DateTime(date.Year, date.Month, date.Day);
 
         public static DateTime GetWeekStart(DateTime dayInWeek)
         {
@@ -41,15 +32,9 @@ namespace DateTimeHelper
             return firstDayInWeek;
         }
 
-        public static DateTime GetMonthStart(DateTime date)
-        {
-            return new DateTime(date.Year, date.Month, 1);
-        }
+        public static DateTime GetMonthStart(DateTime date) => new DateTime(date.Year, date.Month, 1);
 
-        public static DateTime GetYearStart(DateTime date)
-        {
-            return new DateTime(date.Year, 1, 1);
-        }
+        public static DateTime GetYearStart(DateTime date) => new DateTime(date.Year, 1, 1);
 
         public static DayOfWeek GetFirstDayOfWeek()
         {
@@ -57,10 +42,7 @@ namespace DateTimeHelper
             return DateTimeHelper.GetFirstDayOfWeek(defaultCultureInfo);
         }
 
-        public static DayOfWeek GetFirstDayOfWeek(CultureInfo cultureInfo)
-        {
-            return cultureInfo.DateTimeFormat.FirstDayOfWeek;
-        }
+        public static DayOfWeek GetFirstDayOfWeek(CultureInfo cultureInfo) => cultureInfo.DateTimeFormat.FirstDayOfWeek;
 
         #endregion
 
